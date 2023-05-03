@@ -2661,9 +2661,9 @@ function main(userinfo) {
 /********定义全局变量*********/
 var jifen_list, meizhou_dao, zhuanxiang_dao, dingyue_dao, storage_user, name, jinri, zongfen;
 var jifen_map = {
+    "文章": 1,
     "评论": 10,
     "视频": 2,
-    "文章": 1,
     "每日": 4,
     "专项": 5,
     "挑战": 6,
