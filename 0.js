@@ -397,9 +397,9 @@ function do_wenzhang() {
   let wen_box = wen_box_slt.findOne();
   // 先做5次
   let wen_num = 0;
-  let re_times = 6;
+  let re_times = 8;
   if (ddtong) {
-    re_times += 6;
+    re_times += 8;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
@@ -472,9 +472,9 @@ function do_wenzhang() {
   storage_user.put("old_wen_list", old_wen);
   sleep(random(2000, 4000));
   // 关闭音乐
-  close_video();
-  back();
-  sleep(random(2000, 4000));
+  //close_video();
+  //back();
+  //sleep(random(2000, 4000));
   // 返回积分页
   jifen_init();
   ran_sleep();
