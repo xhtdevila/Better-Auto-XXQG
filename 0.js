@@ -266,12 +266,12 @@ function do_pinglun() {
   let text_edit = text("欢迎发表你的观点");
   log("查找评论框");
   text_edit.waitFor();
-  sleep(1500);
+  sleep(random(1000, 2000));
   while (text_edit.exists()) {
     let pinglun_edit = text_edit.findOne(500);
     fInfo("尝试点击评论框中");
     log(pinglun_edit.click());
-    sleep(1500);
+    sleep(random(1000, 2000));
     fRefocus();
   }
   fInfo("评论框click: true");
@@ -280,13 +280,13 @@ function do_pinglun() {
   content_list = content_list[random(0, content_list.length - 1)];
   content_list || (fTips('评论内容不可设置为空，已重置为"不忘初心，牢记使命"'), content_list = "不忘初心，牢记使命");
   classNameEndsWith("EditText").findOne().setText(content_list);
-  sleep(1000);
+  sleep(random(1000, 2000));
   text("发布").findOne().click();
-  sleep(1000);
+  sleep(random(1000, 2000));
   text("删除").findOne().click();
-  sleep(1000);
+  sleep(random(1000, 2000));
   text("确认").findOne().click();
-  sleep(1000);
+  sleep(random(1000, 2000));
   //   // 下面是分享
   //   for (let i=0; i<2; i++) {
   //     text_edit.findOne().parent().child(3).click();
@@ -343,7 +343,7 @@ function do_shipin() {
   //log(text("刷新重试").exists());
   textMatches(/刷新重试|继续播放/).exists() && (fInfo("检测到流量提醒"),
     textMatches(/刷新重试|继续播放/).findOne().click());
-  sleep(random(8000, 9500));
+  sleep(random(8000, 19500));
   let re_times = 6;
   if (ddtong) {
     re_times += 6;
@@ -352,7 +352,7 @@ function do_shipin() {
     click(device_w / 2, device_h / 2);
     sleep(500);
     swipe(device_w / 2, device_h * 0.8, device_w / 2, device_h * 0.1, 1000);
-    sleep(random(8000, 9500));
+    sleep(random(8000, 19500));
   }
   back();
   fInfo("视频个数已刷完");
@@ -398,12 +398,12 @@ function do_wenzhang() {
   //   fInfo("点击北京新闻广播", text("北京新闻广播").findOne().parent().click());
   fInfo("点击北京新闻广播：" + last_obj.parent().click());
   fInfo("视听广播时长");
-  sleep(11500);
+  sleep(7500);
   back();
   fClear();
   // 下面正式刷文章
   fInfo("开始文章");
-  sleep(1500);
+  sleep(random(1000, 2000));
   banner = classNameContains("RecyclerView").findOne();
   //log(banner);
   while (banner.findOne(text("北京学习平台").boundsInside(0, 0, device_w, device_h)) == null) {
@@ -483,12 +483,12 @@ function do_wenzhang() {
       }
       swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.3, 1000);
       if (wen_num < re_times - 1) {
-        sleep(random(9000, 10500));
+        sleep(random(9000, 15500));
       } else {
         // 第6次停顿刷时间
         //console.show();   
         toastLog("正在刷时长程序未停止");
-        let shichang = random(330, 360);
+        let shichang = random(20, 40);
         fClear();
         fInfo("开始刷时长，总共" + shichang + "秒");
         let wait_time = 1;
@@ -498,7 +498,7 @@ function do_wenzhang() {
             swipe(device_w / 2, device_h * 0.6, device_w / 2, device_h * 0.6 - 100, 500);
             sleep(500);
           } else {
-            sleep(1000);
+            sleep(random(1000, 2000));
           }
           //w.info.setText("已观看文章" + wait_time + "秒，总共" + shichang + "秒");
           fSet("info", "已观看文章" + wait_time + "秒，总共" + shichang + "秒");
@@ -525,11 +525,11 @@ function do_wenzhang() {
   }
   // 更新已读文章库
   storage_user.put("old_wen_list", old_wen);
-  sleep(3000);
+  sleep(random(2000, 4000));
   // 关闭音乐
   close_video();
   back();
-  sleep(3000);
+  sleep(random(2000, 4000));
   // 返回积分页
   jifen_init();
   ran_sleep();
