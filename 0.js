@@ -8,7 +8,7 @@ var watchdog = TTXS_PRO_CONFIG.get("watchdog", "1800");
 var slide_verify = TTXS_PRO_CONFIG.get("slide_verify", "300");
 var fast_mode = TTXS_PRO_CONFIG.get("fast_mode", false);
 var ddtong = TTXS_PRO_CONFIG.get("ddtong", false);
-var is_exit = TTXS_PRO_CONFIG.get("is_exit", true);
+var is_exit = TTXS_PRO_CONFIG.get("is_exit", false);
 var pinglun = TTXS_PRO_CONFIG.get("pinglun", true);
 var shipin = TTXS_PRO_CONFIG.get("shipin", true);
 var wenzhang = TTXS_PRO_CONFIG.get("wenzhang", true);
@@ -307,61 +307,6 @@ function do_pinglun() {
 }
 
 /********时长部分*********/
-function do_shipin() {
-  entry_jifen_project("视听学习");
-  jifen_list.child(jifen_map["视频"]).child(3).click();
-  if (ddtong) {
-    fSet("title", "视听(dd通)…");
-  } else {
-    fSet("title", "视听学习…");
-  }
-  fClear();
-  desc("百灵").findOne().click();
-  sleep(1000);
-  fInfo("检测温馨提示弹窗");
-  if (text("温馨提示").findOne(1500)) {
-    text("关闭").findOne().click();
-    fInfo("检测到温馨提示并已关闭");
-  }
-  desc("百灵").findOne().click();
-  let shu = text("竖").findOne();
-  sleep(1500);
-  // 定位到整个百灵frame_box
-  let frame_box = shu.parent().parent().parent().parent();
-  textMatches(/\d{2}:\d{2}/).waitFor();
-  let video_list = frame_box.findOne(className("android.widget.ListView"));
-  video_list.child(1).child(1).child(0).click() || fInfo("尝试再次点击" + video_list.child(1).child(1).child(0).child(0).click());
-  text("分享").waitFor();
-  if (idContains("guide_view").findOne(1500)) {
-    fInfo("检测到引导遮罩");
-    sleep(1000);
-    click(device_w / 2, device_h / 2);
-    sleep(1000);
-    click(device_w / 2, device_h / 4);
-  }
-  sleep(800);
-  //log(text("刷新重试").exists());
-  textMatches(/刷新重试|继续播放/).exists() && (fInfo("检测到流量提醒"),
-    textMatches(/刷新重试|继续播放/).findOne().click());
-  sleep(random(8000, 19500));
-  let re_times = 6;
-  if (ddtong) {
-    re_times += 6;
-  }
-  for (let i = 0; i < re_times; i++) {
-    click(device_w / 2, device_h / 2);
-    sleep(500);
-    swipe(device_w / 2, device_h * 0.8, device_w / 2, device_h * 0.1, 1000);
-    sleep(random(8000, 19500));
-  }
-  back();
-  fInfo("视频个数已刷完");
-  // 返回积分页
-  jifen_init();
-  ran_sleep();
-  return true;
-}
-
 function do_wenzhang() {
   //   jifen_list = refind_jifen();
   // 点击进入本地
@@ -535,6 +480,62 @@ function do_wenzhang() {
   ran_sleep();
   return true;
 }
+
+function do_shipin() {
+  entry_jifen_project("视听学习");
+  jifen_list.child(jifen_map["视频"]).child(3).click();
+  if (ddtong) {
+    fSet("title", "视听(dd通)…");
+  } else {
+    fSet("title", "视听学习…");
+  }
+  fClear();
+  desc("百灵").findOne().click();
+  sleep(1000);
+  fInfo("检测温馨提示弹窗");
+  if (text("温馨提示").findOne(1500)) {
+    text("关闭").findOne().click();
+    fInfo("检测到温馨提示并已关闭");
+  }
+  desc("百灵").findOne().click();
+  let shu = text("竖").findOne();
+  sleep(1500);
+  // 定位到整个百灵frame_box
+  let frame_box = shu.parent().parent().parent().parent();
+  textMatches(/\d{2}:\d{2}/).waitFor();
+  let video_list = frame_box.findOne(className("android.widget.ListView"));
+  video_list.child(1).child(1).child(0).click() || fInfo("尝试再次点击" + video_list.child(1).child(1).child(0).child(0).click());
+  text("分享").waitFor();
+  if (idContains("guide_view").findOne(1500)) {
+    fInfo("检测到引导遮罩");
+    sleep(1000);
+    click(device_w / 2, device_h / 2);
+    sleep(1000);
+    click(device_w / 2, device_h / 4);
+  }
+  sleep(800);
+  //log(text("刷新重试").exists());
+  textMatches(/刷新重试|继续播放/).exists() && (fInfo("检测到流量提醒"),
+    textMatches(/刷新重试|继续播放/).findOne().click());
+  sleep(random(10000, 26500));
+  let re_times = 6;
+  if (ddtong) {
+    re_times += 6;
+  }
+  for (let i = 0; i < re_times; i++) {
+    click(device_w / 2, device_h / 2);
+    sleep(500);
+    swipe(device_w / 2, device_h * 0.8, device_w / 2, device_h * 0.1, 1000);
+    sleep(random(10000, 26500));
+  }
+  back();
+  fInfo("视频个数已刷完");
+  // 返回积分页
+  jifen_init();
+  ran_sleep();
+  return true;
+}
+
 
 /********每日答题*********/
 function do_meiri() {
