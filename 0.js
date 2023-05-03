@@ -203,7 +203,7 @@ try {
   dati_tiku = get_tiku_by_ct('https://webapi.ctfile.com/get_file_url.php?uid=35157972&fid=555754562&file_chk=94c3c662ba28f583d2128a1eb9d78af4&app=0&acheck=2&rd=0.14725283060014105');
 }
 // 设置资源保存路径
-files.createWithDirs("/sdcard/天天向上/");
+files.createWithDirs("/sdcard/科技强国/");
 // 调整音量
 if (yl_on) {
   fInfo("设置媒体音量");
