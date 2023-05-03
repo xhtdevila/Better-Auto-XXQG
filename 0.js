@@ -443,7 +443,7 @@ function do_wenzhang() {
             swipe(device_w / 2, device_h * 0.6, device_w / 2, device_h * 0.6 - 100, 500);
             sleep(500);
           } else {
-            sleep(random(1000, 2000));
+            sleep(random(2000, 4000));
           }
           //w.info.setText("已观看文章" + wait_time + "秒，总共" + shichang + "秒");
           fSet("info", "已观看文章" + wait_time + "秒，总共" + shichang + "秒");
@@ -473,8 +473,8 @@ function do_wenzhang() {
   sleep(random(2000, 4000));
   // 关闭音乐
   //close_video();
-  //back();
-  //sleep(random(2000, 4000));
+  back();
+  sleep(random(2000, 4000));
   // 返回积分页
   jifen_init();
   ran_sleep();
