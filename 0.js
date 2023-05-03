@@ -329,10 +329,10 @@ function do_wenzhang() {
   text("北京").waitFor();
   sleep(500);
   log("切换北京");
-  text("北京").findOne().parent().parent().click();*/
+  text("北京").findOne().parent().parent().click();
   log("查找banner");
   //let banner = className("android.support.v7.widget.RecyclerView").findOne();
-  let banner = classNameContains("RecyclerView").findOne();
+  let banner = classNameContains("RecyclerView").findOne();*/
   fInfo("查找北京新闻广播");
   //fRefocus();
   while (banner.findOne(text("北京新闻广播").boundsInside(0, 0, device_w, device_h)) == null) {
