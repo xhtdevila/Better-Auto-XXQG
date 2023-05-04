@@ -518,9 +518,9 @@ function do_shipin() {
   textMatches(/刷新重试|继续播放/).exists() && (fInfo("检测到流量提醒"),
     textMatches(/刷新重试|继续播放/).findOne().click());
   sleep(random(10000, 26500));
-  let re_times = 6;
+  let re_times = 9;
   if (ddtong) {
-    re_times += 6;
+    re_times += 9;
   }
   for (let i = 0; i < re_times; i++) {
     click(device_w / 2, device_h / 2);
