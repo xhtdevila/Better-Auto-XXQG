@@ -398,9 +398,9 @@ function do_wenzhang() {
   let wen_box = wen_box_slt.findOne();
   // 先做5次
   let wen_num = 0;
-  let re_times = 6;
+  let re_times = 12;
   if (ddtong) {
-    re_times += 6;
+    re_times += 12;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
@@ -454,7 +454,7 @@ function do_wenzhang() {
         console.hide();
         sleep(2000);
         back();
-        sleep(2000);
+        sleep(1000);
         back();
         break;
       }
