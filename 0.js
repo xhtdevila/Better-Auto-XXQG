@@ -253,7 +253,7 @@ function do_pinglun() {
   entry_jifen_project("发表观点");
   fSet("title", "评论…");
   fClear();
-  sleep(1000);
+  sleep(3000);
   text("推荐").findOne().parent().parent().click();
   swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.4, 1000);
   id("general_card_title_id").findOne().parent().parent();
