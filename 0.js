@@ -454,6 +454,8 @@ function do_wenzhang() {
         console.hide();
         sleep(2000);
         back();
+        sleep(2000);
+        back();
         break;
       }
     } else {
