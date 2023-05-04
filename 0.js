@@ -317,7 +317,7 @@ function do_wenzhang() {
   } else {
     fSet("title", "选读文章…");
   }
-  fClear();
+  /*fClear();
   fInfo("切换地区为北京");
   text("切换地区").findOne(3000);
   if (text("立即切换").exists()) {
@@ -328,7 +328,7 @@ function do_wenzhang() {
   log("查找北京");
   text("北京").waitFor();
   sleep(500);
-  log("切换北京");
+  log("切换北京");*/
   text("北京").findOne().parent().parent().click();
   log("查找banner");
   //let banner = className("android.support.v7.widget.RecyclerView").findOne();
