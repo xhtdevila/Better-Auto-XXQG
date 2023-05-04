@@ -473,8 +473,8 @@ function do_wenzhang() {
   sleep(random(2000, 4000));
   // 关闭音乐
   //close_video();
-  back();
-  sleep(random(2000, 4000));
+  //back();
+  //sleep(random(2000, 4000));
   // 返回积分页
   jifen_init();
   ran_sleep();
