@@ -254,7 +254,7 @@ function do_pinglun() {
   fSet("title", "评论…");
   fClear();
   sleep(3000);
-  text("推荐").findOne().parent().parent().click();
+  text("要闻").findOne().parent().parent().click();
   swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.4, 1000);
   id("general_card_title_id").findOne().parent().parent();
   fInfo("尝试点击title:" + id("general_card_title_id").findOne().text());
