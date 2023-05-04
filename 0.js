@@ -452,12 +452,14 @@ function do_wenzhang() {
         }
         fSet("info", "已结束文章时长");
         console.hide();
+        sleep(2000);
         back();
         break;
       }
     } else {
       wen_num -= 1;
     }
+    sleep(2000);
     back();
     //id("general_card_image_id").waitFor();
     className("android.widget.ListView").scrollable().depth(17).waitFor();
