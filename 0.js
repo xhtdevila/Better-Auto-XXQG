@@ -429,6 +429,8 @@ function do_wenzhang() {
         idContains("xxqg-article-header").findOne().child(0).click();
       }
       swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.3, 1000);
+      sleep(2000);
+      swipe(device_w / 2, device_h * 0.5, device_w / 3, device_h * 0.2, 1000);
       if (wen_num < re_times - 1) {
         sleep(random(9000, 15500));
       } else {
