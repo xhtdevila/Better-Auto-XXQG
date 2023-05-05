@@ -399,9 +399,9 @@ function do_wenzhang() {
   let wen_box = wen_box_slt.findOne();
   // 先做5次
   let wen_num = 0;
-  let re_times = 12;
+  let re_times = 2;
   if (ddtong) {
-    re_times += 12;
+    re_times += 2;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
