@@ -818,7 +818,7 @@ function do_tiaozhan() {
   className("android.widget.Image").textMatches(/total.*|chanllenge.*/).waitFor();
   if (textStartsWith("total").exists()) {
     var a = !0,
-      b = className("android.widget.Image").textStartsWith("total").findOne().parent();
+      b = className("android.widget.Image").text("total.88d389ee").findOne().parent()//className("android.widget.Image").textStartsWith("total").findOne().parent();
     ran_sleep();
     // do b.click(), sleep(500); while (textStartsWith("total").exists());
     b.click();
