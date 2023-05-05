@@ -399,9 +399,9 @@ function do_wenzhang() {
   let wen_box = wen_box_slt.findOne();
   // 先做5次
   let wen_num = 0;
-  let re_times = 2;
+  let re_times = 1;
   if (ddtong) {
-    re_times += 2;
+    re_times += 1;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
@@ -435,7 +435,7 @@ function do_wenzhang() {
         // 第6次停顿刷时间
         //console.show();   
         toastLog("正在刷时长程序未停止");
-        let shichang = random(20, 40);
+        let shichang = random(2, 4);
         fClear();
         fInfo("开始刷时长，总共" + shichang + "秒");
         let wait_time = 1;
@@ -455,8 +455,6 @@ function do_wenzhang() {
         console.hide();
         sleep(2000);
         back();
-        sleep(1000);
-        text("北京").findOne().parent().parent().click();
         break;
       }
     } else {
@@ -479,7 +477,9 @@ function do_wenzhang() {
   sleep(random(2000, 4000));
   // 关闭音乐
   //close_video();
-  //back();
+  back();
+  sleep(3000);
+  text("亮点").findOne().parent().parent().click();
   //sleep(random(2000, 4000));
   // 返回积分页
   jifen_init();
