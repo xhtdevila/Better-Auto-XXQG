@@ -824,7 +824,7 @@ function do_tiaozhan() {
     ran_sleep();
     // do b.click(), sleep(500); while (textStartsWith("total").exists());
     //b.click();
-    click(device_w / 2, device_h * 0.15);
+    click(600,300);
     className("android.widget.Image").textStartsWith("chanllenge").waitFor()
   }
   var total = 0, max_total = 5;
