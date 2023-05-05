@@ -254,8 +254,6 @@ function do_pinglun() {
   fSet("title", "评论…");
   fClear();
   sleep(3000);
-  text("亮点").findOne().parent().parent().click();
-  sleep(3000);
   swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.4, 1000);
   id("general_card_title_id").findOne().parent().parent();
   fInfo("尝试点击title:" + id("general_card_title_id").findOne().text());
@@ -479,8 +477,8 @@ function do_wenzhang() {
   //close_video();
   back();
   sleep(3000);
-  text("亮点").findOne().parent().parent().click();
-  //sleep(random(2000, 4000));
+  className("android.widget.TextView").text("亮点").findOne().click();
+  sleep(random(2000, 4000));
   // 返回积分页
   jifen_init();
   ran_sleep();
