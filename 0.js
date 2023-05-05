@@ -823,7 +823,8 @@ function do_tiaozhan() {
       b = className("android.widget.Image").text("total.88d389ee").findOne().parent()//className("android.widget.Image").textStartsWith("total").findOne().parent();
     ran_sleep();
     // do b.click(), sleep(500); while (textStartsWith("total").exists());
-    b.click();
+    //b.click();
+    click(device_w / 2, device_h * 0.15);
     className("android.widget.Image").textStartsWith("chanllenge").waitFor()
   }
   var total = 0, max_total = 5;
