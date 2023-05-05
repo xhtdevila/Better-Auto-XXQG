@@ -30,7 +30,7 @@ var pushplus = TTXS_PRO_CONFIG.get("pushplus", "");
 var yl_on = TTXS_PRO_CONFIG.get("yl_on", true);
 var yinliang = TTXS_PRO_CONFIG.get("yinliang", "0");
 var zhanghao = TTXS_PRO_CONFIG.get("zhanghao", "");
-var comment = TTXS_PRO_CONFIG.get("comment", "全心全意为人民服务|不忘初心，牢记使命|不忘初心，方得始终|永远坚持党的领导|富强、民主、文明、和谐|自由，平等，公正，法治");
+var comment = TTXS_PRO_CONFIG.get("comment", "我们一定要全心全意为人民服务₍˄·͈༝·͈˄*₎◞ ̑̑|只有不忘初心，才能牢记使命(*´I`*)|领导不忘初心，结果方得始终(˵¯͒〰¯͒˵)|我们只有永远坚持党的领导，才能走上幸福之路⌓‿⌓|人民最终走向富强、民主、文明、和谐的道路ƪ(˘⌣˘)ʃ优雅|我们都会过上自由，平等，公正，法治的生活(●'◡'●)");
 
 function google_ocr_api(img) {
   console.log('GoogleMLKit文字识别中');
@@ -399,9 +399,9 @@ function do_wenzhang() {
   let wen_box = wen_box_slt.findOne();
   // 先做5次
   let wen_num = 0;
-  let re_times = 1;
+  let re_times = 13;
   if (ddtong) {
-    re_times += 1;
+    re_times += 13;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
@@ -435,7 +435,7 @@ function do_wenzhang() {
         // 第6次停顿刷时间
         //console.show();   
         toastLog("正在刷时长程序未停止");
-        let shichang = random(2, 4);
+        let shichang = random(20, 40);
         fClear();
         fInfo("开始刷时长，总共" + shichang + "秒");
         let wait_time = 1;
@@ -479,8 +479,8 @@ function do_wenzhang() {
   //close_video();
   back();
   sleep(3000);
-  className("android.widget.TextView").text("亮点").findOne().parent().click();
-  sleep(random(2000, 4000));
+  //className("android.widget.TextView").text("亮点").findOne().parent().click();
+  //sleep(random(2000, 4000));
   // 返回积分页
   jifen_init();
   ran_sleep();
@@ -2563,7 +2563,7 @@ function xxqg(userinfo) {
   noupdate_thread.isAlive() && (noupdate_thread.interrupt(), fInfo("终止更新弹窗检测"));
   nonotice_thread.isAlive() && (nonotice_thread.interrupt(), fInfo("终止消息通知检测"));
   
-  r = 3//random(0,3)
+  r = random(0,3)
   if (r==0){
   true == wenzhang && ("old" == jifen_flag && "已完成" != jifen_list.child(jifen_map["文章"]).child(3).text() || "old" != jifen_flag && "已完成" != jifen_list.child(jifen_map["文章"]).child(4).text()) && (console.verbose("无障碍服务：" + auto.service), toastLog("开始文章次数与时长"), do_wenzhang(), jifen_list = refind_jifen());
   c = 1;
