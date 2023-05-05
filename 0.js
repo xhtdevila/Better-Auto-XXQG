@@ -254,7 +254,8 @@ function do_pinglun() {
   fSet("title", "评论…");
   fClear();
   sleep(3000);
-  className("android.widget.TextView").text("亮点").findOne().click();
+  text("亮点").findOne().parent().parent().click();
+  sleep(3000);
   swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.4, 1000);
   id("general_card_title_id").findOne().parent().parent();
   fInfo("尝试点击title:" + id("general_card_title_id").findOne().text());
@@ -455,7 +456,7 @@ function do_wenzhang() {
         sleep(2000);
         back();
         sleep(1000);
-        back();
+        text("北京").findOne().parent().parent().click();
         break;
       }
     } else {
@@ -2562,7 +2563,7 @@ function xxqg(userinfo) {
   noupdate_thread.isAlive() && (noupdate_thread.interrupt(), fInfo("终止更新弹窗检测"));
   nonotice_thread.isAlive() && (nonotice_thread.interrupt(), fInfo("终止消息通知检测"));
   
-  r = random(0,3)
+  r = 3//random(0,3)
   if (r==0){
   true == wenzhang && ("old" == jifen_flag && "已完成" != jifen_list.child(jifen_map["文章"]).child(3).text() || "old" != jifen_flag && "已完成" != jifen_list.child(jifen_map["文章"]).child(4).text()) && (console.verbose("无障碍服务：" + auto.service), toastLog("开始文章次数与时长"), do_wenzhang(), jifen_list = refind_jifen());
   c = 1;
