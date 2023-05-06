@@ -399,9 +399,9 @@ function do_wenzhang() {
   let wen_box = wen_box_slt.findOne();
   // 先做5次
   let wen_num = 0;
-  let re_times = 13;
+  let re_times = 14;
   if (ddtong) {
-    re_times += 13;
+    re_times += 14;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
@@ -429,8 +429,8 @@ function do_wenzhang() {
         idContains("xxqg-article-header").findOne().child(0).click();
       }
       swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.3, 1000);
-      sleep(2000);
-      swipe(device_w / 2, device_h * 0.5, device_w / 3, device_h * 0.2, 1000);
+      sleep(5000);
+      swipe(device_w / 2, device_h * 0.5, device_w / 3, device_h * 0.2, 1500);
       if (wen_num < re_times - 1) {
         sleep(random(9000, 15500));
       } else {
@@ -2604,7 +2604,8 @@ function xxqg(userinfo) {
   true == meiri && ("old" == jifen_flag && "已完成" != jifen_list.child(jifen_map["每日"]).child(3).text() || "old" != jifen_flag && "已完成" != jifen_list.child(jifen_map["每日"]).child(4).text()) && (toastLog("每日答题开始"), do_meiri(), jifen_list = refind_jifen());
   }
   sleep(1500);
-  
+  close_video();
+  sleep(3000);
   q = random(0,1)
   if (q==0){
   if (ocr_test()) {
