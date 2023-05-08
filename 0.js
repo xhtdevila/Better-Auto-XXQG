@@ -254,7 +254,7 @@ function do_pinglun() {
   fSet("title", "评论…");
   fClear();
   sleep(3000);
-  className("android.widget.TextView").text("亮点").findOne().parent().click();
+  className("android.widget.TextView").text("综合").findOne().parent().click();
   sleep(1000);
   swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.4, 1000);
   id("general_card_title_id").findOne().parent().parent();
