@@ -254,7 +254,16 @@ function do_pinglun() {
   fSet("title", "评论…");
   fClear();
   sleep(3000);
+  pl = random(0,2)
+  if (pl==0){
   className("android.widget.TextView").text("综合").findOne().parent().click();
+  }
+  else if(pl==1){
+  className("android.widget.TextView").text("思想").findOne().parent().click();
+  }
+  else if(pl==2){
+  className("android.widget.TextView").text("县级融媒").findOne().parent().click();
+  }
   sleep(1000);
   swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.4, 1000);
   id("general_card_title_id").findOne().parent().parent();
@@ -351,6 +360,18 @@ function do_wenzhang() {
   // 下面正式刷文章
   fInfo("开始文章");
   sleep(random(1000, 2000));
+  yd = random(0,3)
+
+  if (yd==0){
+  className("android.widget.TextView").text("综合").findOne().parent().click();
+  }
+  else if(yd==1){
+  className("android.widget.TextView").text("思想").findOne().parent().click();
+  }
+  else if(yd==2){
+  className("android.widget.TextView").text("县级融媒").findOne().parent().click();
+  }
+  if (yd==3){
   banner = classNameContains("RecyclerView").findOne();
   //log(banner);
   while (banner.findOne(text("北京学习平台").boundsInside(0, 0, device_w, device_h)) == null) {
@@ -370,6 +391,7 @@ function do_wenzhang() {
   sleep(1000);
   let swipe_y = text("新思想扎根京华").findOne().parent().parent().bounds().bottom;
   log("识别出顶部：", swipe_y);
+  }
   fRefocus();
   let listview = className("android.widget.ListView").depth(17).findOne();
   // 先判断是否有可刷文章，没有则停止脚本
