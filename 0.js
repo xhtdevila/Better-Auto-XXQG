@@ -419,7 +419,7 @@ function do_wenzhang() {
       old_wen.shift();
     }
     fClear();
-    fInfo("点击文章：第" +(wen_num+1)+ title);
+    fInfo("学习第"+(wen_num+1)+"篇文章："+ title);
     //wen_box.click();
     let title_click = wen_box.parent().parent().click();
     fInfo("点击：" + title_click);
