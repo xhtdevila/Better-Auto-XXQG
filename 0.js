@@ -360,18 +360,6 @@ function do_wenzhang() {
   // 下面正式刷文章
   fInfo("开始文章");
   sleep(random(1000, 2000));
-  yd = random(0,3)
-
-  if (yd==0){
-  className("android.widget.TextView").text("综合").findOne().parent().click();
-  }
-  else if(yd==1){
-  className("android.widget.TextView").text("思想").findOne().parent().click();
-  }
-  else if(yd==2){
-  className("android.widget.TextView").text("县级融媒").findOne().parent().click();
-  }
-  if (yd==3){
   banner = classNameContains("RecyclerView").findOne();
   //log(banner);
   while (banner.findOne(text("北京学习平台").boundsInside(0, 0, device_w, device_h)) == null) {
@@ -391,7 +379,6 @@ function do_wenzhang() {
   sleep(1000);
   let swipe_y = text("新思想扎根京华").findOne().parent().parent().bounds().bottom;
   log("识别出顶部：", swipe_y);
-  }
   fRefocus();
   let listview = className("android.widget.ListView").depth(17).findOne();
   // 先判断是否有可刷文章，没有则停止脚本
@@ -432,7 +419,7 @@ function do_wenzhang() {
       old_wen.shift();
     }
     fClear();
-    fInfo("点击文章：" + title);
+    fInfo("点击文章：第" +(wen_num+1)+ title);
     //wen_box.click();
     let title_click = wen_box.parent().parent().click();
     fInfo("点击：" + title_click);
