@@ -262,7 +262,7 @@ function do_pinglun() {
   className("android.widget.TextView").text("思想").findOne().parent().click();
   }
   else if(pl==2){
-  className("android.widget.TextView").text("县级融媒").findOne().parent().click();
+  className("android.widget.TextView").text("推荐").findOne().parent().click();
   }
   sleep(1000);
   swipe(device_w / 2, device_h * 0.7, device_w / 2, device_h * 0.4, 1000);
