@@ -541,7 +541,7 @@ function do_shipin() {
   }
   sleep(2500);
   // 定位到整个百灵frame_box
-  let frame_box = shu.parent().parent().parent().parent();
+  //let frame_box = shu.parent().parent().parent().parent();
   textMatches(/\d{2}:\d{2}/).waitFor();
   let video_list = frame_box.findOne(className("android.widget.ListView"));
   video_list.child(1).child(1).child(0).click() || fInfo("尝试再次点击" + video_list.child(1).child(1).child(0).child(0).click());
