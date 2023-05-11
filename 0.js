@@ -515,7 +515,7 @@ function do_shipin() {
     fInfo("检测到温馨提示并已关闭");
   }
   desc("百灵").findOne().click();
-  let shu = text("熊猫").findOne();
+  let shu = text("竖").findOne();
   /*sleep(1000);
   sp = random(0,4)
 
