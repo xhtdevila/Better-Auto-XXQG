@@ -540,6 +540,7 @@ function do_shipin() {
     let shu = text("熊猫").findOne();
   }
   sleep(2500);
+  fInfo("进入频道"+shu);
   // 定位到整个百灵frame_box
   let frame_box = shu.parent().parent().parent().parent();
   textMatches(/\d{2}:\d{2}/).waitFor();
