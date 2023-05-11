@@ -519,16 +519,21 @@ function do_shipin() {
   sp = random(0,4)
   if (sp==0){ shu = text("竖").findOne();
   }
-  else if(sp==1){ shu = text("窗").findOne();
+  else if(sp==1){
+    shu = text("窗").findOne();
   }
-  else if(sp==2){ shu = text("炫").findOne();
+  else if(sp==2){
+    shu = text("炫").findOne();
   }
-  else if(sp==3){ shu = text("秀").findOne();
+  else if(sp==3){
+    shu = text("秀").findOne();
   }
-  else if(sp==4){ shu = text("熊猫").findOne();
+  else if(sp==4){
+    shu = text("熊猫").findOne();
   }
   sleep(1500);
   // 定位到整个百灵frame_box
+  className("android.widget.TextView").shu.parent().click();
   let frame_box = shu.parent().parent().parent().parent();
   textMatches(/\d{2}:\d{2}/).waitFor();
   let video_list = frame_box.findOne(className("android.widget.ListView"));
