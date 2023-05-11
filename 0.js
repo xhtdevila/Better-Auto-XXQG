@@ -515,21 +515,24 @@ function do_shipin() {
     fInfo("检测到温馨提示并已关闭");
   }
   desc("百灵").findOne().click();
-  //let shu = text("竖").findOne();
+  let shu = text("竖").findOne();
+  sleep(2000);
   sp = random(0,4)
-  if (sp==0){ shu = text("竖").findOne();
+
+  if (sp==0){
+    className("android.widget.TextView").text("竖").findOne().parent().click();
   }
   else if(sp==1){
-    shu = text("窗").findOne();
+    className("android.widget.TextView").text("窗").findOne().parent().click();
   }
   else if(sp==2){
-    shu = text("炫").findOne();
+    className("android.widget.TextView").text("炫").findOne().parent().click();
   }
   else if(sp==3){
-    shu = text("秀").findOne();
+    className("android.widget.TextView").text("秀").findOne().parent().click();
   }
   else if(sp==4){
-    shu = text("熊猫").findOne();
+    className("android.widget.TextView").text("熊猫").findOne().parent().click();
   }
   sleep(1500);
   // 定位到整个百灵frame_box
