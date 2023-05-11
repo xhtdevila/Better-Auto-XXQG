@@ -516,7 +516,7 @@ function do_shipin() {
   }
   desc("百灵").findOne().click();
   let shu = text("竖").findOne();
-  sleep(2000);
+  sleep(1000);
   sp = random(0,4)
 
   if (sp==0){
@@ -534,7 +534,7 @@ function do_shipin() {
   else if(sp==4){
     className("android.widget.TextView").text("熊猫").findOne().parent().click();
   }
-  sleep(1500);
+  sleep(2500);
   // 定位到整个百灵frame_box
   let frame_box = shu.parent().parent().parent().parent();
   textMatches(/\d{2}:\d{2}/).waitFor();
