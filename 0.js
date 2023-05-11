@@ -515,8 +515,8 @@ function do_shipin() {
     fInfo("检测到温馨提示并已关闭");
   }
   desc("百灵").findOne().click();
-  let shu = text("竖").findOne();
-  /*sleep(1000);
+  //let shu = text("竖").findOne();
+  sleep(1000);
   sp = random(0,4)
 
   if (sp==0){
@@ -538,7 +538,7 @@ function do_shipin() {
   else if(sp==4){
     className("android.widget.TextView").text("熊猫").findOne().parent().click();
     let shu = text("熊猫").findOne();
-  }*/
+  }
   sleep(2500);
   // 定位到整个百灵frame_box
   let frame_box = shu.parent().parent().parent().parent();
