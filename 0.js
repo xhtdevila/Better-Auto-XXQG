@@ -536,7 +536,6 @@ function do_shipin() {
   }
   sleep(1500);
   // 定位到整个百灵frame_box
-  className("android.widget.TextView").shu.parent().click();
   let frame_box = shu.parent().parent().parent().parent();
   textMatches(/\d{2}:\d{2}/).waitFor();
   let video_list = frame_box.findOne(className("android.widget.ListView"));
