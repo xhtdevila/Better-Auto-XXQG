@@ -256,7 +256,7 @@ function do_pinglun() {
   sleep(3000);
   pl = random(0,2)
   if (pl==0){
-  className("android.widget.TextView").text("要文").findOne().parent().click();
+  className("android.widget.TextView").text("要闻").findOne().parent().click();
   }
   else if(pl==1){
   className("android.widget.TextView").text("思想").findOne().parent().click();
