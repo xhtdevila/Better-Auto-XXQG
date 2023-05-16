@@ -263,7 +263,7 @@ function do_pinglun() {
   }
   else if(pl==2){
   className("android.widget.TextView").text("主题教育").findOne().parent().click();
-  sleep(1000);
+  sleep(3000);
   className("android.widget.TextView").text("推荐").findOne().parent().click();
   }
   sleep(1000);
