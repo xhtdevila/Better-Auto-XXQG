@@ -861,7 +861,7 @@ function do_tiaozhan() {
     //click(550,360);
     className("android.widget.Image").textStartsWith("chanllenge").waitFor()
   }
-  var total = 0, max_total = 5;
+  var total = 0, max_total = random(6,10);
   for (ddtong && (max_total += 10);;) {
     fClear();
     fInfo("第" + (total + 1) + "题");
