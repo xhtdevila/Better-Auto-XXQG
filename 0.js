@@ -409,7 +409,7 @@ function do_wenzhang() {
   // 下面那句会定位到新思想的文章，不能加载过新思想
   let wen_box = wen_box_slt.findOne();
   // 先做5次
-  yds = random(12,15)
+  yds = random(11,15)
   let wen_num = 0;
   let re_times = yds;
   if (ddtong) {
