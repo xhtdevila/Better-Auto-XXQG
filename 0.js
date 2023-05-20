@@ -462,7 +462,7 @@ function do_wenzhang() {
             sleep(random(2000, 4000));
           }
           //w.info.setText("已观看文章" + wait_time + "秒，总共" + shichang + "秒");
-          fSet("info", "已观看文章" + wait_time + "秒，总共" + shichang + "秒");
+          fSet("info", "最后一篇文章" + wait_time + "秒，总共" + shichang + "秒");
           wait_time++;
         }
         fSet("info", "已结束文章时长");
