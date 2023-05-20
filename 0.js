@@ -253,7 +253,7 @@ function do_pinglun() {
   entry_jifen_project("发表观点");
   fSet("title", "评论…");
   fClear();
-  sleep(3000);
+  sleep(5000);
   pl = random(0,2)
   if (pl==0){
   className("android.widget.TextView").text("要闻").findOne().parent().click();
@@ -263,7 +263,7 @@ function do_pinglun() {
   }
   else if(pl==2){
   className("android.widget.TextView").text("主题教育").findOne().parent().click();
-  sleep(1000);
+  sleep(2000);
   className("android.widget.TextView").text("中央精神").findOne().click();
   }
   sleep(1000);
@@ -409,10 +409,11 @@ function do_wenzhang() {
   // 下面那句会定位到新思想的文章，不能加载过新思想
   let wen_box = wen_box_slt.findOne();
   // 先做5次
+  yds = random(12, 16)
   let wen_num = 0;
-  let re_times = 14;
+  let re_times = yds;
   if (ddtong) {
-    re_times += 14;
+    re_times += yds;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
