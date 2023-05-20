@@ -409,11 +409,11 @@ function do_wenzhang() {
   // 下面那句会定位到新思想的文章，不能加载过新思想
   let wen_box = wen_box_slt.findOne();
   // 先做5次
-  yds = random(12, 16)
+  yds = random(12,15)
   let wen_num = 0;
   let re_times = yds;
   if (ddtong) {
-    re_times += yds;
+    re_times += 18;
   }
   while (true) {
     let title = wen_box.findOne(idContains("general_card_title_id")).text();
@@ -455,7 +455,7 @@ function do_wenzhang() {
         let wait_time = 1;
         for (let i = 0; i < shichang; i++) { //*random(55, 60)
           // 每15秒增加一次滑动防息屏
-          if (i % 15 == 0) {
+          if (i % 5 == 0) {
             swipe(device_w / 2, device_h * 0.6, device_w / 2, device_h * 0.6 - 100, 500);
             sleep(500);
           } else {
